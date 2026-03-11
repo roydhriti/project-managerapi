@@ -43,7 +43,7 @@ async function bootstrap() {
   await app.listen(port);
 
   console.log(`🚀 Application running on port ${port}`);
-  // console.log(`📚 Swagger available at: http://localhost:3000/api`);
+  console.log(`📚 Swagger available at: http://localhost:3000/api`);
 }
 
 bootstrap();

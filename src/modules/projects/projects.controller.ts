@@ -1,9 +1,9 @@
 import { Controller, Get, Post, Body, Param, Put, Delete, Req, UseGuards } from '@nestjs/common';
 import { ProjectsService } from './projects.service';
-import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { ProjectDto } from './dto/project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
+import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
 
 
 @ApiTags('Projects')
