@@ -1,16 +1,16 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Types } from 'mongoose';
+// import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+// import { Document, Types } from 'mongoose';
 
-@Schema({ timestamps: true })
-export class Project extends Document {
-  @Prop({ required: true, trim: true })
-  projectName: string;
+// @Schema({ timestamps: true })
+// export class Project extends Document {
+//   @Prop({ required: true, trim: true })
+//   projectName: string;
 
-  @Prop()
-  description?: string;
+//   @Prop()
+//   description?: string;
 
-  @Prop({ type: Types.ObjectId, ref: 'User', required: true })
-  createdBy: Types.ObjectId;
-}
+//   @Prop({ type: Types.ObjectId, ref: 'User', required: true })
+//   createdBy: Types.ObjectId;
+// }
 
-export const ProjectSchema = SchemaFactory.createForClass(Project);
+// export const ProjectSchema = SchemaFactory.createForClass(Project);

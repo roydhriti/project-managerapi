@@ -1,44 +1,28 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEnum, IsOptional, IsString, IsDateString } from 'class-validator';
-import { TaskPriority, TaskStatus } from '../schemas/task.schema';
+import { TaskPriority, TaskStatus } from '@prisma/client';
 
 export class CreateTaskDto {
-  @ApiProperty({
-    example: 'Build login API',
-  })
+  @ApiProperty()
   @IsString()
   title: string;
 
-  @ApiProperty({
-    example: 'Implement JWT authentication',
-    required: false,
-  })
+  @ApiProperty()
   @IsOptional()
   @IsString()
   description?: string;
 
-  @ApiProperty({
-    enum: TaskPriority,
-    example: TaskPriority.HIGH,
-    required: false,
-  })
+  @ApiProperty()
   @IsOptional()
   @IsEnum(TaskPriority)
   priority?: TaskPriority;
 
-  @ApiProperty({
-    enum: TaskStatus,
-    example: TaskStatus.PENDING,
-    required: false,
-  })
+  @ApiProperty()
   @IsOptional()
   @IsEnum(TaskStatus)
   status?: TaskStatus;
 
-  @ApiProperty({
-    example: '2026-03-10',
-    required: false,
-  })
+  @ApiProperty()
   @IsOptional()
   @IsDateString()
   dueDate?: string;

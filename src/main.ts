@@ -39,11 +39,11 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   // Render dynamic port
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3001;
   await app.listen(port);
 
   console.log(`🚀 Application running on port ${port}`);
-  console.log(`📚 Swagger available at: http://localhost:3000/api`);
+  console.log(`📚 Swagger available at: http://localhost:3001/api`);
 }
 
 bootstrap();
