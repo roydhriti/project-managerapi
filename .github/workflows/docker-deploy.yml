@@ -20,9 +20,12 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image
-        run: docker build -t dhriti/project-manager-api .
+        run: docker build -t dhriti240/project-manager-api .
 
       - name: Push Docker Image
         run: |
-          docker tag dhriti/project-manager-api dhriti/project-manager-api:latest
-          docker push dhriti/project-manager-api:latest
+          docker tag dhriti240/project-manager-api dhriti240/project-manager-api:latest
+          docker push dhriti240/project-manager-api:latest
+
+      - name: Trigger Render Deploy
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
